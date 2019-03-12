@@ -1,8 +1,9 @@
 import React from 'react';
 
-const Hello = () => {
+// 함수형 컴포넌트
+const Hello = (props) => {
     return (
-        <div>hello?</div>
+        <div>{props.val}</div>
     );
 };
 
