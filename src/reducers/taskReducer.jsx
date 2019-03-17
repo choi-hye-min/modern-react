@@ -3,7 +3,7 @@ const initialState = {
         {
             type: 'ADD_TASK',
             payload:{
-                task: 'reducer 공부하기'
+                task: 'reducer 공부하기 [sample]'
             }
         }
     ]

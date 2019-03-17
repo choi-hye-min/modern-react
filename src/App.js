@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 
 import TodoApp from './components/TodoApp';
+import ShowTest from './components/ShowTest';
 
 class App extends Component {
 
@@ -15,7 +16,10 @@ class App extends Component {
         let self = this;
 
         return (
-            <TodoApp />
+            <React.Fragment>
+                <TodoApp />
+                <ShowTest />
+            </React.Fragment>
         );
     }
 }

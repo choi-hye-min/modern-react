@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {addTask} from '../actions/tasks';
+import * as TodoActions from '../actions/tasks';
 
 class TodoApp extends Component {
 
@@ -15,12 +15,13 @@ class TodoApp extends Component {
     _handleAddTask = (e) => {
         const target = document.getElementById("input-task");
         let task = target.value.trim();
-        //addTask(task);
+
+        this.props.addTask(task)
         target.value = "";
     }
 
     componentDidMount() {
-        //console.log(this.props)
+
     }
 
     render() {
@@ -29,8 +30,8 @@ class TodoApp extends Component {
         return (
             <div>
                 <input id={"input-task"} type={"text"} />
-                <input onClick={self.props.onTest} type={"button"} value={"등록"} />
-                <ul>
+                <input onClick={self._handleAddTask} type={"button"} value={"등록"} />
+                {/*<ul>
                     {
                         this.props.tasks.map((task, key) => {
                             return (
@@ -38,7 +39,7 @@ class TodoApp extends Component {
                             )
                         })
                     }
-                </ul>
+                </ul>*/}
             </div>
         );
     }
@@ -51,9 +52,10 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return {
-        onTest: () => dispatch(addTask('추가된 task'))
-    }
+    /*return {
+        addTask: (task) => dispatch(addTask(task))
+    }*/
+    return bindActionCreators(TodoActions, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodoApp);
