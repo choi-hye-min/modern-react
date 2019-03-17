@@ -15,7 +15,7 @@ class App extends Component {
         let self = this;
 
         return (
-            <TodoApp store={self.props.store} />
+            <TodoApp />
         );
     }
 }

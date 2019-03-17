@@ -3,14 +3,17 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import {createStore} from "redux";
 import {initialState, taskReducer} from './reducers/taskReducer';
+import {Provider} from 'react-redux';
 
 const store = createStore(taskReducer);
 
 store.subscribe(() => {
-    console.log(store.getState());
+    //console.log(store.getState());
 })
 
 ReactDOM.render(
-    <App store={store}/>,
+    <Provider store={store}>
+        <App/>
+    </Provider>,
     document.getElementById('root')
 );
