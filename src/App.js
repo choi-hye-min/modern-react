@@ -1,17 +1,27 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
-import Hello from './Hello';
-import ClassFunction from './ClassFunction';
+import TodoApp from './components/TodoApp';
+import ShowTest from './components/ShowTest';
 
 class App extends Component {
-  render() {
-    return (
-      <React.Fragment>
-          <Hello val={"arthur"}/>
-          <ClassFunction />
-      </React.Fragment>
-    );
-  }
+
+    constructor(props, context) {
+        super(props, context);
+        this.state = {
+
+        }
+    }
+
+    render() {
+        let self = this;
+
+        return (
+            <React.Fragment>
+                <TodoApp />
+                <ShowTest />
+            </React.Fragment>
+        );
+    }
 }
 
 export default App;
