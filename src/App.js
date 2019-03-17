@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 
+import TodoApp from './components/TodoApp';
+
 class App extends Component {
 
     constructor(props, context) {
@@ -9,19 +11,11 @@ class App extends Component {
         }
     }
 
-    componentDidMount() {
-        //https://yts.ag/api/v2/list_movies.json
-        console.log(this._tstFunction())
-    }
-
-    _tstFunction = () => {
-        return 111;
-    }
-
     render() {
+        let self = this;
 
         return (
-            <div>hello</div>
+            <TodoApp store={self.props.store} />
         );
     }
 }
