@@ -52,7 +52,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onTest: () => dispatch(addTask())
+        onTest: () => dispatch(addTask('추가된 task'))
     }
 }
 
