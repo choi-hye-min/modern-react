@@ -20,6 +20,10 @@ class TodoApp extends Component {
         target.value = "";
     }
 
+    _asyncIncrement = (e) => {
+        this.props.asyncIncrement();
+    }
+
     componentDidMount() {
 
     }
@@ -29,8 +33,15 @@ class TodoApp extends Component {
 
         return (
             <div>
-                <input id={"input-task"} type={"text"} />
-                <input onClick={self._handleAddTask} type={"button"} value={"등록"} />
+                <div>
+                    <h3>Counter : {this.props.counter}</h3>
+                    <button style={{width:"150px", fontSize:"35px"}} onClick={self._asyncIncrement}>+</button>
+                </div>
+
+                <div style={{marginTop: "35px"}}>
+                    <input id={"input-task"} type={"text"} />
+                    <input onClick={self._handleAddTask} type={"button"} value={"등록"} />
+                </div>
             </div>
         );
     }
@@ -38,7 +49,7 @@ class TodoApp extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        tasks: state.tasks
+        counter: state.get('counter')
     }
 }
 
@@ -46,5 +57,10 @@ const mapDispatchToProps = (dispatch) => {
     /*return { addTask: (task) => dispatch(addTask(task)) }*/
     return bindActionCreators(TodoActions, dispatch)
 }
+
+/*TodoApp.defaultProps = {
+    counter: 0,
+    tasks: []
+}*/
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodoApp);

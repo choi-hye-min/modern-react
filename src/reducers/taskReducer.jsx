@@ -19,6 +19,10 @@ export const taskReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'ADD_TASK':
             return state.set('tasks', state.get('tasks').push(Map(action))) // 불면 라이브라리 변경후
+
+        case 'ADD_COUNTER':
+            return state.set('counter', state.get('counter')+1)
+
         default:
             return state;
     }
