@@ -31,15 +31,6 @@ class TodoApp extends Component {
             <div>
                 <input id={"input-task"} type={"text"} />
                 <input onClick={self._handleAddTask} type={"button"} value={"등록"} />
-                {/*<ul>
-                    {
-                        this.props.tasks.map((task, key) => {
-                            return (
-                                <li key={key}>{task.payload.task}</li>
-                            )
-                        })
-                    }
-                </ul>*/}
             </div>
         );
     }
@@ -52,9 +43,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-    /*return {
-        addTask: (task) => dispatch(addTask(task))
-    }*/
+    /*return { addTask: (task) => dispatch(addTask(task)) }*/
     return bindActionCreators(TodoActions, dispatch)
 }
 

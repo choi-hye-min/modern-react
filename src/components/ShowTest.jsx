@@ -4,7 +4,6 @@ import {connect} from 'react-redux';
 class ShowTest extends PureComponent {
 
     render() {
-
         return (
             <div>
                 <h3>---list---</h3>
@@ -23,8 +22,11 @@ class ShowTest extends PureComponent {
 }
 
 const mapStateToProps = (state) => {
+    /*return {
+        tasks: state.tasks.toJS() // 변경전
+    }*/
     return {
-        tasks: state.tasks
+        tasks: state.get('tasks').toJS() // 변경후
     }
 }
 
