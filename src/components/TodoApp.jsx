@@ -16,7 +16,7 @@ class TodoApp extends Component {
         const target = document.getElementById("input-task");
         let task = target.value.trim();
 
-        this.props.addTask(task)
+        this.props.addTask({task}) // createAction사용
         target.value = "";
     }
 

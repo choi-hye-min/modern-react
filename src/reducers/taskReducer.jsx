@@ -1,4 +1,5 @@
 import { Map, List } from 'immutable';
+import {handleActions} from 'redux-actions';
 
 // immutable 활용하여 변경
 const initialState = Map(
@@ -15,6 +16,17 @@ const initialState = Map(
     }
 );
 
+const ADD_TASK = 'ADD_TASK';
+const ADD_COUNTER = 'ADD_COUNTER';
+
+export const taskReducer = handleActions({
+    [ADD_TASK]: (state, action) => {
+        return state.set('tasks', state.get('tasks').push(Map(action)))
+    },
+    [ADD_COUNTER]: (state, action) => state.set('counter', state.get('counter')+1)
+}, initialState)
+
+/*
 export const taskReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'ADD_TASK':
@@ -26,4 +38,4 @@ export const taskReducer = (state = initialState, action) => {
         default:
             return state;
     }
-}
+}*/
