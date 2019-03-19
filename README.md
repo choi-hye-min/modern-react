@@ -1,8 +1,6 @@
 # 모던 리액트 프로젝트
-- 모던 프로젝트 스터디를 위한 저장소
-    - Branch를 통해 각장에 맞는 Application 개발
-- 이 프로젝트는 모던 리액트/리덕스 프로그래밍을 참고하여 스터디 하고 있습니다.
-
-![test](./public/images/testImg.gif)
-![Alt text](https://monosnap.com/image/Tsr60aeNzQ49bt0ofJ1tZJZPjmTtZz.png)
-
+- immutable.js 참고
+    - https://devdocs.io/immutable/
+    - https://velopert.com/3354
+    - https://velopert.com/3486
+    - https://fullest-sway.me/blog/2017/06/11/immutable-js/
