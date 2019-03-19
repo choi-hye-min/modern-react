@@ -4,6 +4,8 @@
 - 이 프로젝트는 모던 리액트/리덕스 프로그래밍을 참고하여 스터디 하고 있습니다.
 
 ![test](./public/images/react-thunk.gif)
+
 ![test](./public/images/testImg.gif)
+
 ![Alt text](https://monosnap.com/image/Tsr60aeNzQ49bt0ofJ1tZJZPjmTtZz.png)
 
