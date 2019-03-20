@@ -13,7 +13,7 @@ const composeEnhancers = typeof window === 'object' && window.__REDUX_DEVTOOLS_E
         }) : compose;
 
 const enhancer = composeEnhancers(
-    applyMiddleware(createLogger(), ReduxThunk),
+    applyMiddleware(/*createLogger(), */ReduxThunk),
     // other store enhancers if any
 );
 

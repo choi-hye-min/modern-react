@@ -1,4 +1,5 @@
 import { handleActions, createAction } from 'redux-actions';
+import axios from "axios";
 
 /*export const addTask = (task) => {
     console.log("Create Action Task - "+ task)
@@ -23,5 +24,17 @@ export const asyncIncrement = () => {
                 type: 'ADD_COUNTER'
             })
         }, 1000)
+    }
+}
+
+export const addMovie = () => {
+    return (dispatch, getState) => {
+        return axios.get('https://yts.am/api/v2/list_movies.json')
+            .then(res => {
+                dispatch({
+                    type: 'ADD_MOVIE',
+                    payload: res.data.data.movies
+                })
+            })
     }
 }

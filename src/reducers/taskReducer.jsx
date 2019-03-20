@@ -5,6 +5,7 @@ import {handleActions} from 'redux-actions';
 const initialState = Map(
     {
         counter: 0,
+        movies: [],
         tasks: List([
             Map({
                 type: 'ADD_TASK',
@@ -18,12 +19,15 @@ const initialState = Map(
 
 const ADD_TASK = 'ADD_TASK';
 const ADD_COUNTER = 'ADD_COUNTER';
+const ADD_MOVIE = 'ADD_MOVIE';
 
 export const taskReducer = handleActions({
-    [ADD_TASK]: (state, action) => {
-        return state.set('tasks', state.get('tasks').push(Map(action)))
-    },
-    [ADD_COUNTER]: (state, action) => state.set('counter', state.get('counter')+1)
+    [ADD_TASK]: (state, action) => state.set('tasks', state.get('tasks').push(Map(action))),
+
+    [ADD_COUNTER]: (state, action) => state.set('counter', state.get('counter')+1),
+
+    [ADD_MOVIE]: (state, action) => state.set('movies', action.payload)
+
 }, initialState)
 
 /*
